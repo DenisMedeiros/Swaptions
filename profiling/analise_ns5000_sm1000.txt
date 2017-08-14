@@ -1,0 +1,221 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 49.14      1.92     1.92    44851     0.04     0.07  HJM_SimPath_Forward_Blocking(double**, int, int, double, double*, double*, double**, long*, int)
+ 22.01      2.78     0.86 23720509     0.00     0.00  CumNormalInv(double)
+ 14.33      3.34     0.56    89871     0.01     0.01  Discount_Factors_Blocking(double*, int, double, double*, int)
+  5.25      3.55     0.21 21861308     0.00     0.00  RanUnif(long*)
+  4.86      3.74     0.19    29561     0.01     0.04  serialB(double**, double**, int, int, int)
+  2.30      3.83     0.09      678     0.13     5.72  HJM_Swaption_Blocking(double*, double, double, double, double, double, int, int, double, double*, double**, long, long, int, int)
+  0.90      3.86     0.04                             frame_dummy
+  0.77      3.89     0.03   812366     0.00     0.00  dMax(double, double)
+  0.51      3.91     0.02   109823     0.00     0.00  dmatrix(long, long, long, long)
+  0.00      3.91     0.00   103090     0.00     0.00  dvector(long, long)
+  0.00      3.91     0.00    96050     0.00     0.00  free_dmatrix(double**, long, long, long, long)
+  0.00      3.91     0.00    81817     0.00     0.00  free_dvector(double*, long, long)
+  0.00      3.91     0.00      776     0.00     0.00  HJM_Yield_to_Forward(double*, int, double*)
+  0.00      3.91     0.00      713     0.00     0.00  HJM_Drifts(double*, double**, int, int, double, double**)
+  0.00      3.91     0.00        1     0.00     0.00  _GLOBAL__sub_I_NUM_TRIALS
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.26% of 3.91 seconds
+
+index % time    self  children    called     name
+                0.09    3.79     678/678         worker(void*) [2]
+[1]     99.1    0.09    3.79     678         HJM_Swaption_Blocking(double*, double, double, double, double, double, int, int, double, double*, double**, long, long, int, int) [1]
+                1.92    1.28   44851/44851       HJM_SimPath_Forward_Blocking(double**, int, int, double, double*, double*, double**, long*, int) [3]
+                0.56    0.00   89871/89871       Discount_Factors_Blocking(double*, int, double, double*, int) [6]
+                0.03    0.00  812366/812366      dMax(double, double) [9]
+                0.00    0.00    1535/109823      dmatrix(long, long, long, long) [10]
+                0.00    0.00    6304/103090      dvector(long, long) [18]
+                0.00    0.00     776/776         HJM_Yield_to_Forward(double*, int, double*) [21]
+                0.00    0.00     713/713         HJM_Drifts(double*, double**, int, int, double, double**) [22]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     99.1    0.00    3.88                 worker(void*) [2]
+                0.09    3.79     678/678         HJM_Swaption_Blocking(double*, double, double, double, double, double, int, int, double, double*, double**, long, long, int, int) [1]
+-----------------------------------------------
+                1.92    1.28   44851/44851       HJM_Swaption_Blocking(double*, double, double, double, double, double, int, int, double, double*, double**, long, long, int, int) [1]
+[3]     81.7    1.92    1.28   44851         HJM_SimPath_Forward_Blocking(double**, int, int, double, double*, double*, double**, long*, int) [3]
+                0.19    0.86   29561/29561       serialB(double**, double**, int, int, int) [4]
+                0.21    0.00 21861308/21861308     RanUnif(long*) [7]
+                0.02    0.00  108288/109823      dmatrix(long, long, long, long) [10]
+                0.00    0.00   96050/96050       free_dmatrix(double**, long, long, long, long) [19]
+-----------------------------------------------
+                0.19    0.86   29561/29561       HJM_SimPath_Forward_Blocking(double**, int, int, double, double*, double*, double**, long*, int) [3]
+[4]     26.9    0.19    0.86   29561         serialB(double**, double**, int, int, int) [4]
+                0.86    0.00 23720509/23720509     CumNormalInv(double) [5]
+-----------------------------------------------
+                0.86    0.00 23720509/23720509     serialB(double**, double**, int, int, int) [4]
+[5]     22.0    0.86    0.00 23720509         CumNormalInv(double) [5]
+-----------------------------------------------
+                0.56    0.00   89871/89871       HJM_Swaption_Blocking(double*, double, double, double, double, double, int, int, double, double*, double**, long, long, int, int) [1]
+[6]     14.3    0.56    0.00   89871         Discount_Factors_Blocking(double*, int, double, double*, int) [6]
+                0.00    0.00   96786/103090      dvector(long, long) [18]
+                0.00    0.00   81817/81817       free_dvector(double*, long, long) [20]
+-----------------------------------------------
+                0.21    0.00 21861308/21861308     HJM_SimPath_Forward_Blocking(double**, int, int, double, double*, double*, double**, long*, int) [3]
+[7]      5.2    0.21    0.00 21861308         RanUnif(long*) [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[8]      0.9    0.04    0.00                 frame_dummy [8]
+-----------------------------------------------
+                0.03    0.00  812366/812366      HJM_Swaption_Blocking(double*, double, double, double, double, double, int, int, double, double*, double**, long, long, int, int) [1]
+[9]      0.8    0.03    0.00  812366         dMax(double, double) [9]
+-----------------------------------------------
+                0.00    0.00    1535/109823      HJM_Swaption_Blocking(double*, double, double, double, double, double, int, int, double, double*, double**, long, long, int, int) [1]
+                0.02    0.00  108288/109823      HJM_SimPath_Forward_Blocking(double**, int, int, double, double*, double*, double**, long*, int) [3]
+[10]     0.5    0.02    0.00  109823         dmatrix(long, long, long, long) [10]
+-----------------------------------------------
+                0.00    0.00    6304/103090      HJM_Swaption_Blocking(double*, double, double, double, double, double, int, int, double, double*, double**, long, long, int, int) [1]
+                0.00    0.00   96786/103090      Discount_Factors_Blocking(double*, int, double, double*, int) [6]
+[18]     0.0    0.00    0.00  103090         dvector(long, long) [18]
+-----------------------------------------------
+                0.00    0.00   96050/96050       HJM_SimPath_Forward_Blocking(double**, int, int, double, double*, double*, double**, long*, int) [3]
+[19]     0.0    0.00    0.00   96050         free_dmatrix(double**, long, long, long, long) [19]
+-----------------------------------------------
+                0.00    0.00   81817/81817       Discount_Factors_Blocking(double*, int, double, double*, int) [6]
+[20]     0.0    0.00    0.00   81817         free_dvector(double*, long, long) [20]
+-----------------------------------------------
+                0.00    0.00     776/776         HJM_Swaption_Blocking(double*, double, double, double, double, double, int, int, double, double*, double**, long, long, int, int) [1]
+[21]     0.0    0.00    0.00     776         HJM_Yield_to_Forward(double*, int, double*) [21]
+-----------------------------------------------
+                0.00    0.00     713/713         HJM_Swaption_Blocking(double*, double, double, double, double, double, int, int, double, double*, double**, long, long, int, int) [1]
+[22]     0.0    0.00    0.00     713         HJM_Drifts(double*, double**, int, int, double, double**) [22]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [43]
+[23]     0.0    0.00    0.00       1         _GLOBAL__sub_I_NUM_TRIALS [23]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [23] _GLOBAL__sub_I_NUM_TRIALS [21] HJM_Yield_to_Forward(double*, int, double*) [7] RanUnif(long*)
+  [22] HJM_Drifts(double*, double**, int, int, double, double**) [1] HJM_Swaption_Blocking(double*, double, double, double, double, double, int, int, double, double*, double**, long, long, int, int) [10] dmatrix(long, long, long, long)
+   [5] CumNormalInv(double)    [6] Discount_Factors_Blocking(double*, int, double, double*, int) [18] dvector(long, long)
+  [19] free_dmatrix(double**, long, long, long, long) [3] HJM_SimPath_Forward_Blocking(double**, int, int, double, double*, double*, double**, long*, int) [4] serialB(double**, double**, int, int, int)
+  [20] free_dvector(double*, long, long) [9] dMax(double, double) [8] frame_dummy

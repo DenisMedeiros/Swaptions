@@ -1,0 +1,9 @@
+Para compilar com suporte a vetorização
+
+gcc -O2 -Wall -march=native -ftree-vectorize -fopt-info-vec-all -o main main.c
+
+Opções para o 'opt-info': optimized, missed, note, all.
+
+Se quiser vero assembly gerado, basta colocar o '-S' (dá para ver as instruções vetorizadas).
+
+https://www.slideshare.net/linaroorg/using-gcc-autovectorizer
