@@ -95,6 +95,7 @@ int HJM_Yield_to_Forward (FTYPE *pdForward,	//Forward curve to be outputted
 	int i;
 
 	//forward curve computation
+	//VETORIZADO
 	pdForward[0] = pdYield[0];
 	for(i=1;i<=iN-1; ++i){
 	  pdForward[i] = (i+1)*pdYield[i] - i*pdYield[i-1];	//as per formula
@@ -133,10 +134,12 @@ int HJM_Factors(FTYPE **ppdFactors,	//Output matrix that stores factor volatilit
 	int iSuccess = 0;
 	
 	//Computation of factor volatilities
-	for(i = 0; i<=iFactors-1; ++i)
-		for(j=0; j<=iN-2;++j)
+	for(i = 0; i<=iFactors-1; ++i){
+		//VETORIZADo
+		for(j=0; j<=iN-2;++j){
 			ppdFactors[i][j] = sqrt((ppdFacBreak[i][j])*(pdVol[j])*(pdVol[j]));
-	
+		}
+	}
 	iSuccess =1;
 	return iSuccess;
 }
@@ -168,8 +171,10 @@ int HJM_Drifts(FTYPE *pdTotalDrift,	//Output vector that stores the total drift 
 			for(l=0;l<=j-1;++l)
 				ppdDrifts[i][j] -= ppdDrifts[i][l];
 			dSumVol=0;
-			for(l=0;l<=j;++l)
+			//VETORIZADO
+			for(l=0;l<=j;++l){
 				dSumVol += ppdFactors[i][l];
+			}
 			ppdDrifts[i][j] += 0.5*ddelt*(dSumVol)*(dSumVol);
 		}
 	
@@ -348,8 +353,14 @@ int Discount_Factors_opt(FTYPE *pdDiscountFactors,
 	  pdDiscountFactors[i] = 1.0;
 
 	//precompute the exponientials
-	for (j=0; j<=(i-2); ++j){ pdexpRes[j] = -pdRatePath[j]*ddelt; }
-	for (j=0; j<=(i-2); ++j){ pdexpRes[j] = exp(pdexpRes[j]);  }
+	//VETORIADO
+	for (j=0; j<=(i-2); ++j){
+		 pdexpRes[j] = -pdRatePath[j]*ddelt; 
+	}
+	//VETORIZADO
+	for (j=0; j<=(i-2); ++j){
+		pdexpRes[j] = exp(pdexpRes[j]);  
+	}
 	
 	for (i=1; i<=iN-1; ++i)
 	  for (j=0; j<=i-1; ++j)
@@ -379,8 +390,14 @@ int Discount_Factors_Blocking(FTYPE *pdDiscountFactors,
 	FTYPE *pdexpRes;
 	pdexpRes = dvector(0,(iN-1)*BLOCKSIZE-1);
 	//precompute the exponientials
-	for (j=0; j<=(iN-1)*BLOCKSIZE-1; ++j){ pdexpRes[j] = -pdRatePath[j]*ddelt; }
-	for (j=0; j<=(iN-1)*BLOCKSIZE-1; ++j){ pdexpRes[j] = exp(pdexpRes[j]);  }
+	//VETORIZADO
+	for (j=0; j<=(iN-1)*BLOCKSIZE-1; ++j){ 
+		pdexpRes[j] = -pdRatePath[j]*ddelt; 
+	}
+	//VETORIZADO
+	for (j=0; j<=(iN-1)*BLOCKSIZE-1; ++j){
+		 pdexpRes[j] = exp(pdexpRes[j]);  
+	}
 	
 
 	//initializing the discount factor vector

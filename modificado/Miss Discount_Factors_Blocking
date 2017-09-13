@@ -1,0 +1,68 @@
+HJM.cpp:407:13: note: not vectorized: multiple nested loops.
+HJM.cpp:407:13: note: bad loop form.
+HJM.cpp:409:15: note: not vectorized: not suitable for strided load _64 = *_63;
+HJM.cpp:409:15: note: bad data references.
+HJM.cpp:411:17: note: not vectorized: complicated access pattern.
+HJM.cpp:411:17: note: bad data access.
+HJM.cpp:404:13: note: Unknown misalignment, is_packed = 0
+HJM.cpp:404:13: note: virtual phi. skip.
+HJM.cpp:404:13: note: cost model: the vector iteration cost = 2 divided by the scalar iteration cost = 1 is greater or equal to the vectorization factor = 2.
+HJM.cpp:404:13: note: not vectorized: vectorization not profitable.
+HJM.cpp:404:13: note: not vectorized: vector version will never be profitable.
+HJM.cpp:398:13: note: Unknown misalignment, is_packed = 0
+HJM.cpp:398:13: note: Unknown misalignment, is_packed = 0
+HJM.cpp:398:13: note: virtual phi. skip.
+HJM.cpp:398:13: note: not ssa-name.
+HJM.cpp:398:13: note: use not simple.
+HJM.cpp:398:13: note: not ssa-name.
+HJM.cpp:398:13: note: use not simple.
+HJM.cpp:398:13: note: virtual phi. skip.
+HJM.cpp:398:13: note: virtual phi. skip.
+HJM.cpp:394:13: note: versioning for alias required: can't determine dependence between *_32 and *_29
+HJM.cpp:394:13: note: Unknown misalignment, is_packed = 0
+HJM.cpp:394:13: note: Unknown misalignment, is_packed = 0
+HJM.cpp:394:13: note: virtual phi. skip.
+HJM.cpp:394:13: note: not ssa-name.
+HJM.cpp:394:13: note: use not simple.
+HJM.cpp:394:13: note: not ssa-name.
+HJM.cpp:394:13: note: use not simple.
+HJM.cpp:394:13: note: virtual phi. skip.
+HJM.cpp:394:13: note: virtual phi. skip.
+HJM.cpp:391:42: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:394:13: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:394:13: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:394:13: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:394:13: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:395:15: note: not vectorized: no vectype for stmt: vect__33.473_151 = MEM[(double *)vectp_pdRatePath.471_149];
+ scalar_type: vector(2) double
+HJM.cpp:395:15: note: not vectorized: no vectype for stmt: MEM[(double *)vectp.476_155] = vect__35.475_154;
+ scalar_type: vector(2) double
+HJM.cpp:395:15: note: not vectorized: no grouped stores in basic block.
+HJM.cpp:395:15: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:394:2: note: not consecutive access *_115 = _55;
+HJM.cpp:394:2: note: not consecutive access _53 = *_129;
+HJM.cpp:394:2: note: not vectorized: no grouped stores in basic block.
+HJM.cpp:394:13: note: not vectorized: no grouped stores in basic block.
+HJM.cpp:404:13: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:404:13: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:399:16: note: not vectorized: no vectype for stmt: vect__42.463_82 = MEM[(double *)vectp.461_84];
+ scalar_type: vector(2) double
+HJM.cpp:399:16: note: not vectorized: no vectype for stmt: MEM[(double *)vectp.465_77] = vect__43.464_79;
+ scalar_type: vector(2) double
+HJM.cpp:399:16: note: not vectorized: no grouped stores in basic block.
+HJM.cpp:399:16: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:398:2: note: not consecutive access _105 = *_106;
+HJM.cpp:398:2: note: not consecutive access *_106 = _104;
+HJM.cpp:398:2: note: not vectorized: no grouped stores in basic block.
+HJM.cpp:407:13: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:420:9: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:404:13: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:409:15: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:407:13: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:407:13: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:407:13: note: not vectorized: not enough data-refs in basic block.
+HJM.cpp:411:17: note: not consecutive access _58 = *_133;
+HJM.cpp:411:17: note: not consecutive access *_133 = _65;
+HJM.cpp:411:17: note: not consecutive access _64 = *_63;
+HJM.cpp:411:17: note: not vectorized: no grouped stores in basic block.
+HJM.cpp:409:15: note: not vectorized: not enough data-refs in basic block.
