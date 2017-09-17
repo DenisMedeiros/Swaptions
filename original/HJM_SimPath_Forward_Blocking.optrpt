@@ -1,0 +1,138 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+
+Begin optimization report for: serialB(double **, double **, int, int, int)
+
+    Report from: Vector optimizations [vec]
+
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(64,3)
+   remark #15543: loop was not vectorized: loop with function call not considered an optimization candidate.   [ HJM_SimPath_Forward_Blocking.cpp(67,27) ]
+
+   LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(65,5)
+      remark #15543: loop was not vectorized: loop with function call not considered an optimization candidate.   [ HJM_SimPath_Forward_Blocking.cpp(67,27) ]
+
+      LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(66,7)
+         remark #15543: loop was not vectorized: loop with function call not considered an optimization candidate.   [ HJM_SimPath_Forward_Blocking.cpp(67,27) ]
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: HJM_SimPath_Forward_Blocking(double **, int, int, double, double *, double *, double **, long *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(102,2)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(103,4)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(106,6)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(106,6)
+         remark #15388: vectorization support: reference ppdHJMPath has aligned access   [ HJM_SimPath_Forward_Blocking.cpp(107,10) ]
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.350
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15459: masked indexed (or scatter) stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 10 
+         remark #15477: vector loop cost: 5.000 
+         remark #15478: estimated potential speedup: 1.950 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(106,6)
+      <Remainder loop for vectorization>
+         remark #15389: vectorization support: reference ppdHJMPath has unaligned access   [ HJM_SimPath_Forward_Blocking.cpp(107,10) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 1.071
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(144,2)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(145,4)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(147,6)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(150,8)
+         <Peeled loop for vectorization>
+         LOOP END
+
+         LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(150,8)
+            remark #15388: vectorization support: reference ppdFactors has aligned access   [ HJM_SimPath_Forward_Blocking.cpp(151,3) ]
+            remark #15388: vectorization support: reference (unknown) has aligned access   [ HJM_SimPath_Forward_Blocking.cpp(151,3) ]
+            remark #15305: vectorization support: vector length 2
+            remark #15399: vectorization support: unroll factor set to 4
+            remark #15309: vectorization support: normalized vectorization overhead 0.489
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15442: entire loop may be executed in remainder
+            remark #15448: unmasked aligned unit stride loads: 2 
+            remark #15458: masked indexed (or gather) loads: 2 
+            remark #15475: --- begin vector loop cost summary ---
+            remark #15476: scalar loop cost: 19 
+            remark #15477: vector loop cost: 11.000 
+            remark #15478: estimated potential speedup: 1.680 
+            remark #15488: --- end vector loop cost summary ---
+         LOOP END
+
+         LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(150,8)
+         <Alternate Alignment Vectorized Loop>
+         LOOP END
+
+         LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(150,8)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(116,9)
+   remark #15543: loop was not vectorized: loop with function call not considered an optimization candidate.   [ HJM_SimPath_Forward_Blocking.cpp(121,49) ]
+
+   LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(118,13)
+      remark #15543: loop was not vectorized: loop with function call not considered an optimization candidate.   [ HJM_SimPath_Forward_Blocking.cpp(121,49) ]
+
+      LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(119,15)
+         remark #15543: loop was not vectorized: loop with function call not considered an optimization candidate.   [ HJM_SimPath_Forward_Blocking.cpp(121,49) ]
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(64,3) inlined into HJM_SimPath_Forward_Blocking.cpp(139,2)
+   remark #15543: loop was not vectorized: loop with function call not considered an optimization candidate.   [ HJM_SimPath_Forward_Blocking.cpp(67,27) ]
+
+   LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(65,5) inlined into HJM_SimPath_Forward_Blocking.cpp(139,2)
+      remark #15543: loop was not vectorized: loop with function call not considered an optimization candidate.   [ HJM_SimPath_Forward_Blocking.cpp(67,27) ]
+
+      LOOP BEGIN at HJM_SimPath_Forward_Blocking.cpp(66,7) inlined into HJM_SimPath_Forward_Blocking.cpp(139,2)
+         remark #15543: loop was not vectorized: loop with function call not considered an optimization candidate.   [ HJM_SimPath_Forward_Blocking.cpp(67,27) ]
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================

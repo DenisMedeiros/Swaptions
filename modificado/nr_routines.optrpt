@@ -1,0 +1,229 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+
+Begin optimization report for: choldc(double **, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at nr_routines.c(38,4)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at nr_routines.c(38,4)
+   remark #15388: vectorization support: reference a has aligned access   [ nr_routines.c(38,37) ]
+   remark #15388: vectorization support: reference a has aligned access   [ nr_routines.c(38,37) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 1.344
+   remark #15301: REVERSED LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 2 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 17 
+   remark #15477: vector loop cost: 4.000 
+   remark #15478: estimated potential speedup: 3.930 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at nr_routines.c(38,4)
+<Alternate Alignment Vectorized Loop>
+LOOP END
+
+LOOP BEGIN at nr_routines.c(38,4)
+<Remainder loop for vectorization>
+   remark #15389: vectorization support: reference a has unaligned access   [ nr_routines.c(38,37) ]
+   remark #15389: vectorization support: reference a has unaligned access   [ nr_routines.c(38,37) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.500
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at nr_routines.c(38,4)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at nr_routines.c(48,4)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at nr_routines.c(49,3)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at nr_routines.c(49,3)
+      remark #15388: vectorization support: reference a has aligned access   [ nr_routines.c(50,4) ]
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 1.333
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 8 
+      remark #15477: vector loop cost: 1.500 
+      remark #15478: estimated potential speedup: 4.870 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at nr_routines.c(49,3)
+   <Remainder loop for vectorization>
+      remark #15389: vectorization support: reference a has unaligned access   [ nr_routines.c(50,4) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 1.857
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at nr_routines.c(49,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at nr_routines.c(36,2)
+   remark #15532: loop was not vectorized: compile time constraints prevent loop optimization. Consider using -O3.
+
+   LOOP BEGIN at nr_routines.c(37,3)
+      remark #15532: loop was not vectorized: compile time constraints prevent loop optimization. Consider using -O3.
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: gaussj(double **, int, double **, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at nr_routines.c(65,2)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at nr_routines.c(65,2)
+      remark #15389: vectorization support: reference ipiv has unaligned access   [ nr_routines.c(65,21) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.500
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 4 
+      remark #15477: vector loop cost: 1.500 
+      remark #15478: estimated potential speedup: 2.460 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at nr_routines.c(65,2)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at nr_routines.c(70,5)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria
+LOOP END
+
+LOOP BEGIN at nr_routines.c(81,4)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between a line 81 and a line 81
+   remark #15346: vector dependence: assumed FLOW dependence between a line 81 and a line 81
+LOOP END
+
+LOOP BEGIN at nr_routines.c(81,4)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at nr_routines.c(82,4)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between b line 82 and b line 82
+   remark #15346: vector dependence: assumed FLOW dependence between b line 82 and b line 82
+LOOP END
+
+LOOP BEGIN at nr_routines.c(82,4)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at nr_routines.c(89,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between a line 89 and a line 89
+   remark #15346: vector dependence: assumed ANTI dependence between a line 89 and a line 89
+LOOP END
+
+LOOP BEGIN at nr_routines.c(89,3)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at nr_routines.c(90,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between b line 90 and b line 90
+   remark #15346: vector dependence: assumed ANTI dependence between b line 90 and b line 90
+LOOP END
+
+LOOP BEGIN at nr_routines.c(90,3)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at nr_routines.c(91,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at nr_routines.c(95,5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between a line 95 and a line 95
+      remark #15346: vector dependence: assumed ANTI dependence between a line 95 and a line 95
+   LOOP END
+
+   LOOP BEGIN at nr_routines.c(95,5)
+   <Remainder>
+   LOOP END
+
+   LOOP BEGIN at nr_routines.c(96,5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between b line 96 and b line 96
+      remark #15346: vector dependence: assumed ANTI dependence between b line 96 and b line 96
+   LOOP END
+
+   LOOP BEGIN at nr_routines.c(96,5)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at nr_routines.c(99,2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at nr_routines.c(101,4)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between a line 102 and a line 102
+      remark #15346: vector dependence: assumed FLOW dependence between a line 102 and a line 102
+   LOOP END
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at nr_routines.c(66,2)
+   remark #15532: loop was not vectorized: compile time constraints prevent loop optimization. Consider using -O3.
+
+   LOOP BEGIN at nr_routines.c(68,3)
+      remark #15532: loop was not vectorized: compile time constraints prevent loop optimization. Consider using -O3.
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: dmatrix(long, long, long, long)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at nr_routines.c(173,2)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between m line 173 and m line 173
+LOOP END
+
+LOOP BEGIN at nr_routines.c(173,2)
+<Remainder>
+LOOP END
+===========================================================================

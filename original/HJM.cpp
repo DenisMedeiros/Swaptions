@@ -56,7 +56,7 @@ int HJM_SimPath_Yield(FTYPE **ppdHJMPath,  //Matrix that stores generated HJM pa
 		free_dvector(pdTotalDrift, 0, iN-1);
 		return iSuccess;
 	}
-	// testando
+
 	//computation of drifts from factor volatilities
 	iSuccess = HJM_Drifts(pdTotalDrift, ppdDrifts, iN, iFactors, dYears, ppdFactors);
 	if (iSuccess!=1)

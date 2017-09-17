@@ -4,13 +4,17 @@ INCLUDE =
 
 # Opções de vetorização (o relatório pode ser all, missed, optimized, note)
 # Fonte: https://twiki.cern.ch/twiki/bin/view/LHCb/VectorizeSource-code
-CXXFLAGS = -Wall -O2 -ftree-vectorize -fopt-info-vec-missed -ffast-math -funsafe-loop-optimizations -ftree-loop-if-convert-stores 
+#CXXFLAGS = -Wall -O2 -ftree-vectorize -fopt-info-vec-optimized -ffast-math -funsafe-loop-optimizations -ftree-loop-if-convert-stores 
 
 # Para realizar o profiling das funções do código.
-CXXFLAGS := $(CXXFLAGS) -pg
+#CXXFLAGS := $(CXXFLAGS) -pg
+
+CXX = icpc
+CXXFLAGS = -O2 -qopt-report=5 -qopt-report-phase=vec
+#CXXFLAGS = -O2 -no-prec-div -O2 -D NOFUNCCALL -qopt-report=1 -qopt-report-phase=vec -prof-gen -prof-dir=./
 
 # Para habilitar a versão com threads.
-version = pthreads
+# version = pthreads
 
 EXEC = swaptions 
 

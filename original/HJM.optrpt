@@ -1,0 +1,1139 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+
+Begin optimization report for: HJM_SimPath_Yield(double **, int, int, double, double *, double **, long *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at HJM.cpp(99,2) inlined into HJM.cpp(51,13)
+<Peeled loop for vectorization, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(99,2) inlined into HJM.cpp(51,13)
+<Multiversioned v1>
+   remark #15388: vectorization support: reference pdForward_1079 has aligned access   [ HJM.cpp(100,4) ]
+   remark #15388: vectorization support: reference pdYield has aligned access   [ HJM.cpp(100,4) ]
+   remark #15389: vectorization support: reference pdYield has unaligned access   [ HJM.cpp(100,4) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.286
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 19 
+   remark #15477: vector loop cost: 7.000 
+   remark #15478: estimated potential speedup: 2.630 
+   remark #15487: type converts: 2 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at HJM.cpp(99,2) inlined into HJM.cpp(51,13)
+<Alternate Alignment Vectorized Loop, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(99,2) inlined into HJM.cpp(51,13)
+<Remainder loop for vectorization, Multiversioned v1>
+   remark #15388: vectorization support: reference pdForward_1079 has aligned access   [ HJM.cpp(100,4) ]
+   remark #15389: vectorization support: reference pdYield has unaligned access   [ HJM.cpp(100,4) ]
+   remark #15389: vectorization support: reference pdYield has unaligned access   [ HJM.cpp(100,4) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.857
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at HJM.cpp(99,2) inlined into HJM.cpp(51,13)
+<Remainder loop for vectorization, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(99,2) inlined into HJM.cpp(51,13)
+<Multiversioned v2>
+   remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+LOOP END
+
+LOOP BEGIN at HJM.cpp(99,2) inlined into HJM.cpp(51,13)
+<Remainder, Multiversioned v2>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(160,2) inlined into HJM.cpp(61,13)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between ppdDrifts_1084 line 161 and ppdFactors line 161
+   remark #15346: vector dependence: assumed ANTI dependence between ppdFactors line 161 and ppdDrifts_1084 line 161
+LOOP END
+
+LOOP BEGIN at HJM.cpp(160,2) inlined into HJM.cpp(61,13)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(164,2) inlined into HJM.cpp(61,13)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(165,3) inlined into HJM.cpp(61,13)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at HJM.cpp(168,4) inlined into HJM.cpp(61,13)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between ppdDrifts_1084 line 169 and ppdDrifts_1084 line 169
+         remark #15346: vector dependence: assumed ANTI dependence between ppdDrifts_1084 line 169 and ppdDrifts_1084 line 169
+      LOOP END
+
+      LOOP BEGIN at HJM.cpp(168,4) inlined into HJM.cpp(61,13)
+      <Remainder>
+      LOOP END
+
+      LOOP BEGIN at HJM.cpp(171,4) inlined into HJM.cpp(61,13)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at HJM.cpp(171,4) inlined into HJM.cpp(61,13)
+         remark #15388: vectorization support: reference ppdFactors has aligned access   [ HJM.cpp(172,5) ]
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 8
+         remark #15309: vectorization support: normalized vectorization overhead 0.900
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 10 
+         remark #15477: vector loop cost: 2.500 
+         remark #15478: estimated potential speedup: 3.420 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at HJM.cpp(171,4) inlined into HJM.cpp(61,13)
+      <Remainder loop for vectorization>
+         remark #15389: vectorization support: reference ppdFactors has unaligned access   [ HJM.cpp(172,5) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 4.000
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at HJM.cpp(171,4) inlined into HJM.cpp(61,13)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM.cpp(177,2) inlined into HJM.cpp(61,13)
+<Distributed chunk1>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(177,2) inlined into HJM.cpp(61,13)
+   <Distributed chunk1>
+      remark #15389: vectorization support: reference pdTotalDrift_1084 has unaligned access   [ HJM.cpp(179,3) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.300
+      remark #15301: PARTIAL LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 5 
+      remark #15477: vector loop cost: 2.500 
+      remark #15478: estimated potential speedup: 1.810 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(177,2) inlined into HJM.cpp(61,13)
+   <Remainder loop for vectorization, Distributed chunk1>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM.cpp(177,2) inlined into HJM.cpp(61,13)
+<Distributed chunk2>
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at HJM.cpp(180,3) inlined into HJM.cpp(61,13)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between pdTotalDrift_1084 line 181 and pdTotalDrift_1084 line 181
+      remark #15346: vector dependence: assumed ANTI dependence between pdTotalDrift_1084 line 181 and pdTotalDrift_1084 line 181
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(180,3) inlined into HJM.cpp(61,13)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM.cpp(210,2) inlined into HJM.cpp(71,13)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(211,3) inlined into HJM.cpp(71,13)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at HJM.cpp(211,3) inlined into HJM.cpp(71,13)
+         remark #15389: vectorization support: reference ppdHJMPath has unaligned access   [ HJM.cpp(212,4) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 8 
+         remark #15477: vector loop cost: 2.500 
+         remark #15478: estimated potential speedup: 2.900 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at HJM.cpp(211,3) inlined into HJM.cpp(71,13)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM.cpp(215,2) inlined into HJM.cpp(71,13)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at HJM.cpp(215,2) inlined into HJM.cpp(71,13)
+   <Multiversioned v2>
+      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(215,2) inlined into HJM.cpp(71,13)
+   <Remainder, Multiversioned v2>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM.cpp(225,3) inlined into HJM.cpp(71,13)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(228,5) inlined into HJM.cpp(71,13)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(228,5) inlined into HJM.cpp(71,13)
+      remark #15388: vectorization support: reference ppdFactors has aligned access   [ HJM.cpp(229,7) ]
+      remark #15388: vectorization support: reference pdZ has aligned access   [ HJM.cpp(229,7) ]
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.633
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 2 
+      remark #15458: masked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 14 
+      remark #15477: vector loop cost: 7.500 
+      remark #15478: estimated potential speedup: 1.810 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(228,5) inlined into HJM.cpp(71,13)
+   <Alternate Alignment Vectorized Loop>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(228,5) inlined into HJM.cpp(71,13)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at HJM.cpp(219,2) inlined into HJM.cpp(71,13)
+   remark #15543: loop was not vectorized: loop with function call not considered an optimization candidate.   [ HJM.cpp(223,27) ]
+
+   LOOP BEGIN at HJM.cpp(222,4) inlined into HJM.cpp(71,13)
+      remark #15543: loop was not vectorized: loop with function call not considered an optimization candidate.   [ HJM.cpp(223,27) ]
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: HJM_Yield_to_Forward(double *, int, double *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at HJM.cpp(99,2)
+<Peeled loop for vectorization, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(99,2)
+<Multiversioned v1>
+   remark #15388: vectorization support: reference pdForward has aligned access   [ HJM.cpp(100,4) ]
+   remark #15388: vectorization support: reference pdYield has aligned access   [ HJM.cpp(100,4) ]
+   remark #15389: vectorization support: reference pdYield has unaligned access   [ HJM.cpp(100,4) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.286
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 19 
+   remark #15477: vector loop cost: 7.000 
+   remark #15478: estimated potential speedup: 2.630 
+   remark #15487: type converts: 2 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at HJM.cpp(99,2)
+<Alternate Alignment Vectorized Loop, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(99,2)
+<Remainder loop for vectorization, Multiversioned v1>
+   remark #15388: vectorization support: reference pdForward has aligned access   [ HJM.cpp(100,4) ]
+   remark #15389: vectorization support: reference pdYield has unaligned access   [ HJM.cpp(100,4) ]
+   remark #15389: vectorization support: reference pdYield has unaligned access   [ HJM.cpp(100,4) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.857
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at HJM.cpp(99,2)
+<Remainder loop for vectorization, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(99,2)
+<Multiversioned v2>
+   remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+LOOP END
+
+LOOP BEGIN at HJM.cpp(99,2)
+<Remainder, Multiversioned v2>
+LOOP END
+===========================================================================
+
+Begin optimization report for: HJM_Factors(double **, int, int, double *, double **)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at HJM.cpp(136,2)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(137,3)
+   <Peeled loop for vectorization, Multiversioned v1>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(137,3)
+   <Multiversioned v1>
+      remark #15388: vectorization support: reference ppdFactors has aligned access   [ HJM.cpp(138,4) ]
+      remark #15389: vectorization support: reference ppdFacBreak has unaligned access   [ HJM.cpp(138,4) ]
+      remark #15388: vectorization support: reference pdVol has aligned access   [ HJM.cpp(138,4) ]
+      remark #15388: vectorization support: reference pdVol has aligned access   [ HJM.cpp(138,4) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.146
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 61 
+      remark #15477: vector loop cost: 20.500 
+      remark #15478: estimated potential speedup: 2.880 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(137,3)
+   <Alternate Alignment Vectorized Loop, Multiversioned v1>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(137,3)
+   <Remainder loop for vectorization, Multiversioned v1>
+      remark #15389: vectorization support: reference ppdFactors has unaligned access   [ HJM.cpp(138,4) ]
+      remark #15389: vectorization support: reference ppdFacBreak has unaligned access   [ HJM.cpp(138,4) ]
+      remark #15388: vectorization support: reference pdVol has aligned access   [ HJM.cpp(138,4) ]
+      remark #15388: vectorization support: reference pdVol has aligned access   [ HJM.cpp(138,4) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.314
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(137,3)
+   <Remainder loop for vectorization, Multiversioned v1>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(137,3)
+   <Multiversioned v2>
+      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: HJM_Drifts(double *, double **, int, int, double, double **)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at HJM.cpp(160,2)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between ppdDrifts line 161 and ppdFactors line 161
+   remark #15346: vector dependence: assumed ANTI dependence between ppdFactors line 161 and ppdDrifts line 161
+LOOP END
+
+LOOP BEGIN at HJM.cpp(160,2)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(164,2)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(165,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at HJM.cpp(168,4)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between ppdDrifts line 169 and ppdDrifts line 169
+         remark #15346: vector dependence: assumed ANTI dependence between ppdDrifts line 169 and ppdDrifts line 169
+      LOOP END
+
+      LOOP BEGIN at HJM.cpp(168,4)
+      <Remainder>
+      LOOP END
+
+      LOOP BEGIN at HJM.cpp(171,4)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at HJM.cpp(171,4)
+         remark #15388: vectorization support: reference ppdFactors has aligned access   [ HJM.cpp(172,5) ]
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 8
+         remark #15309: vectorization support: normalized vectorization overhead 0.900
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 10 
+         remark #15477: vector loop cost: 2.500 
+         remark #15478: estimated potential speedup: 3.420 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at HJM.cpp(171,4)
+      <Remainder loop for vectorization>
+         remark #15389: vectorization support: reference ppdFactors has unaligned access   [ HJM.cpp(172,5) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 4.000
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at HJM.cpp(171,4)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM.cpp(177,2)
+<Distributed chunk1>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(177,2)
+   <Distributed chunk1>
+      remark #15389: vectorization support: reference pdTotalDrift has unaligned access   [ HJM.cpp(179,3) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.300
+      remark #15301: PARTIAL LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 5 
+      remark #15477: vector loop cost: 2.500 
+      remark #15478: estimated potential speedup: 1.810 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(177,2)
+   <Remainder loop for vectorization, Distributed chunk1>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM.cpp(180,3)
+<Distributed chunk2>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(177,2)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(177,2)
+      remark #15388: vectorization support: reference pdTotalDrift has aligned access   [ HJM.cpp(181,4) ]
+      remark #15388: vectorization support: reference pdTotalDrift has aligned access   [ HJM.cpp(181,4) ]
+      remark #15388: vectorization support: reference ppdDrifts has aligned access   [ HJM.cpp(181,4) ]
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 1.050
+      remark #15301: PERMUTED LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 2 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 14 
+      remark #15477: vector loop cost: 2.500 
+      remark #15478: estimated potential speedup: 5.140 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(177,2)
+   <Alternate Alignment Vectorized Loop>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(177,2)
+   <Remainder loop for vectorization>
+      remark #15388: vectorization support: reference pdTotalDrift has aligned access   [ HJM.cpp(181,4) ]
+      remark #15388: vectorization support: reference pdTotalDrift has aligned access   [ HJM.cpp(181,4) ]
+      remark #15389: vectorization support: reference ppdDrifts has unaligned access   [ HJM.cpp(181,4) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 1.083
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(177,2)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: HJM_SimPath_Forward(double **, int, int, double, double *, double *, double **, long *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at HJM.cpp(210,2)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(211,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at HJM.cpp(211,3)
+         remark #15389: vectorization support: reference ppdHJMPath has unaligned access   [ HJM.cpp(212,4) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 8 
+         remark #15477: vector loop cost: 2.500 
+         remark #15478: estimated potential speedup: 2.900 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at HJM.cpp(211,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM.cpp(215,2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at HJM.cpp(215,2)
+   <Multiversioned v2>
+      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(215,2)
+   <Remainder, Multiversioned v2>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM.cpp(225,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(228,5)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(228,5)
+      remark #15388: vectorization support: reference ppdFactors has aligned access   [ HJM.cpp(229,7) ]
+      remark #15388: vectorization support: reference pdZ has aligned access   [ HJM.cpp(229,7) ]
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.633
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 2 
+      remark #15458: masked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 14 
+      remark #15477: vector loop cost: 7.500 
+      remark #15478: estimated potential speedup: 1.810 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(228,5)
+   <Alternate Alignment Vectorized Loop>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(228,5)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at HJM.cpp(219,2)
+   remark #15543: loop was not vectorized: loop with function call not considered an optimization candidate.   [ HJM.cpp(223,27) ]
+
+   LOOP BEGIN at HJM.cpp(222,4)
+      remark #15543: loop was not vectorized: loop with function call not considered an optimization candidate.   [ HJM.cpp(223,27) ]
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: HJM_Correlations(double **, int, int, double **)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at HJM.cpp(260,2)
+<Distributed chunk1>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(260,2)
+   <Distributed chunk1>
+      remark #15389: vectorization support: reference pdTotalVol has unaligned access   [ HJM.cpp(262,3) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.300
+      remark #15301: PARTIAL LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 5 
+      remark #15477: vector loop cost: 2.500 
+      remark #15478: estimated potential speedup: 1.810 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(260,2)
+   <Remainder loop for vectorization, Distributed chunk1>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM.cpp(263,3)
+<Distributed chunk2>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(260,2)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(260,2)
+      remark #15388: vectorization support: reference pdTotalVol has aligned access   [ HJM.cpp(264,4) ]
+      remark #15388: vectorization support: reference pdTotalVol has aligned access   [ HJM.cpp(264,4) ]
+      remark #15389: vectorization support: reference ppdFactors has unaligned access   [ HJM.cpp(264,4) ]
+      remark #15388: vectorization support: reference ppdFactors has aligned access   [ HJM.cpp(264,4) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.667
+      remark #15301: PERMUTED LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 2 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 21 
+      remark #15477: vector loop cost: 4.500 
+      remark #15478: estimated potential speedup: 4.370 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(260,2)
+   <Alternate Alignment Vectorized Loop>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(260,2)
+   <Remainder loop for vectorization>
+      remark #15388: vectorization support: reference pdTotalVol has aligned access   [ HJM.cpp(264,4) ]
+      remark #15388: vectorization support: reference pdTotalVol has aligned access   [ HJM.cpp(264,4) ]
+      remark #15389: vectorization support: reference ppdFactors has unaligned access   [ HJM.cpp(264,4) ]
+      remark #15389: vectorization support: reference ppdFactors has unaligned access   [ HJM.cpp(264,4) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.889
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(260,2)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM.cpp(260,2)
+<Peeled loop for vectorization, Distributed chunk3>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(260,2)
+<Distributed chunk3>
+   remark #15388: vectorization support: reference pdTotalVol has aligned access   [ HJM.cpp(265,3) ]
+   remark #15388: vectorization support: reference pdTotalVol has aligned access   [ HJM.cpp(265,3) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.074
+   remark #15301: PARTIAL LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 47 
+   remark #15477: vector loop cost: 17.000 
+   remark #15478: estimated potential speedup: 2.690 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at HJM.cpp(260,2)
+<Remainder loop for vectorization, Distributed chunk3>
+   remark #15388: vectorization support: reference pdTotalVol has aligned access   [ HJM.cpp(265,3) ]
+   remark #15388: vectorization support: reference pdTotalVol has aligned access   [ HJM.cpp(265,3) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.263
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at HJM.cpp(260,2)
+<Remainder loop for vectorization, Distributed chunk3>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(269,2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at HJM.cpp(270,3)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between ppdWeights line 271 and ppdFactors line 271
+      remark #15346: vector dependence: assumed ANTI dependence between ppdFactors line 271 and ppdWeights line 271
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(270,3)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM.cpp(274,2)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(275,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at HJM.cpp(275,3)
+         remark #15389: vectorization support: reference ppdHJMCorr has unaligned access   [ HJM.cpp(276,4) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector loop cost summary ---
+         remark #15476: scalar loop cost: 8 
+         remark #15477: vector loop cost: 2.500 
+         remark #15478: estimated potential speedup: 2.900 
+         remark #15488: --- end vector loop cost summary ---
+      LOOP END
+
+      LOOP BEGIN at HJM.cpp(275,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at HJM.cpp(279,2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at HJM.cpp(280,3)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at HJM.cpp(281,4)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between ppdHJMCorr line 282 and ppdHJMCorr line 282
+         remark #15346: vector dependence: assumed ANTI dependence between ppdHJMCorr line 282 and ppdHJMCorr line 282
+      LOOP END
+
+      LOOP BEGIN at HJM.cpp(281,4)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: HJM_Forward_to_Yield(double *, int, double *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at HJM.cpp(302,2)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between pdYield line 303 and pdYield line 303
+LOOP END
+
+LOOP BEGIN at HJM.cpp(302,2)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: Discount_Factors(double *, int, double, double *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at HJM.cpp(321,9)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(321,9)
+   remark #15388: vectorization support: reference pdDiscountFactors has aligned access   [ HJM.cpp(322,17) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.833
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 5 
+   remark #15477: vector loop cost: 1.500 
+   remark #15478: estimated potential speedup: 3.160 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at HJM.cpp(321,9)
+<Remainder loop for vectorization>
+   remark #15388: vectorization support: reference pdDiscountFactors has aligned access   [ HJM.cpp(322,17) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.000
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at HJM.cpp(321,9)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(324,9)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(325,11)
+   <Peeled loop for vectorization, Multiversioned v1>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(325,11)
+   <Multiversioned v1>
+      remark #15388: vectorization support: reference pdRatePath has aligned access   [ HJM.cpp(326,37) ]
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.381
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 117 
+      remark #15477: vector loop cost: 42.000 
+      remark #15478: estimated potential speedup: 2.740 
+      remark #15482: vectorized math library calls: 1 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(325,11)
+   <Remainder loop for vectorization, Multiversioned v1>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(325,11)
+   <Multiversioned v2>
+      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: Discount_Factors_opt(double *, int, double, double *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at HJM.cpp(347,2)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(347,2)
+   remark #15388: vectorization support: reference pdDiscountFactors has aligned access   [ HJM.cpp(348,4) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.750
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 6 
+   remark #15477: vector loop cost: 2.000 
+   remark #15478: estimated potential speedup: 2.860 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at HJM.cpp(347,2)
+<Remainder loop for vectorization>
+   remark #15388: vectorization support: reference pdDiscountFactors has aligned access   [ HJM.cpp(348,4) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.000
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at HJM.cpp(347,2)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(351,2)
+<Peeled loop for vectorization, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(351,2)
+<Multiversioned v1>
+   remark #15388: vectorization support: reference pdexpRes has aligned access   [ HJM.cpp(351,28) ]
+   remark #15388: vectorization support: reference pdRatePath has aligned access   [ HJM.cpp(351,28) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.571
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 10 
+   remark #15477: vector loop cost: 3.500 
+   remark #15478: estimated potential speedup: 2.740 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at HJM.cpp(351,2)
+<Alternate Alignment Vectorized Loop, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(351,2)
+<Remainder loop for vectorization, Multiversioned v1>
+   remark #15388: vectorization support: reference pdexpRes has aligned access   [ HJM.cpp(351,28) ]
+   remark #15389: vectorization support: reference pdRatePath has unaligned access   [ HJM.cpp(351,28) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.250
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at HJM.cpp(351,2)
+<Remainder loop for vectorization, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(351,2)
+<Multiversioned v2>
+   remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+LOOP END
+
+LOOP BEGIN at HJM.cpp(351,2)
+<Remainder, Multiversioned v2>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(352,2)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(352,2)
+   remark #15388: vectorization support: reference pdexpRes has aligned access   [ HJM.cpp(352,42) ]
+   remark #15388: vectorization support: reference pdexpRes has aligned access   [ HJM.cpp(352,28) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.143
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 109 
+   remark #15477: vector loop cost: 38.500 
+   remark #15478: estimated potential speedup: 2.790 
+   remark #15482: vectorized math library calls: 1 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at HJM.cpp(352,2)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(354,2)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at HJM.cpp(355,4)
+   <Peeled loop for vectorization, Multiversioned v1>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(355,4)
+   <Multiversioned v1>
+      remark #15388: vectorization support: reference pdexpRes has aligned access   [ HJM.cpp(356,6) ]
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 1.208
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15475: --- begin vector loop cost summary ---
+      remark #15476: scalar loop cost: 11 
+      remark #15477: vector loop cost: 3.000 
+      remark #15478: estimated potential speedup: 3.430 
+      remark #15488: --- end vector loop cost summary ---
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(355,4)
+   <Remainder loop for vectorization, Multiversioned v1>
+      remark #15388: vectorization support: reference pdexpRes has aligned access   [ HJM.cpp(356,6) ]
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 3.625
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(355,4)
+   <Remainder loop for vectorization, Multiversioned v1>
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(355,4)
+   <Multiversioned v2>
+      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+   LOOP END
+
+   LOOP BEGIN at HJM.cpp(355,4)
+   <Remainder, Multiversioned v2>
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: Discount_Factors_Blocking(double *, int, double, double *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at HJM.cpp(382,2)
+<Peeled loop for vectorization, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(382,2)
+<Multiversioned v1>
+   remark #15388: vectorization support: reference pdexpRes has aligned access   [ HJM.cpp(382,41) ]
+   remark #15388: vectorization support: reference pdRatePath has aligned access   [ HJM.cpp(382,41) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.571
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 10 
+   remark #15477: vector loop cost: 3.500 
+   remark #15478: estimated potential speedup: 2.740 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at HJM.cpp(382,2)
+<Alternate Alignment Vectorized Loop, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(382,2)
+<Remainder loop for vectorization, Multiversioned v1>
+   remark #15388: vectorization support: reference pdexpRes has aligned access   [ HJM.cpp(382,41) ]
+   remark #15389: vectorization support: reference pdRatePath has unaligned access   [ HJM.cpp(382,41) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.250
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at HJM.cpp(382,2)
+<Remainder loop for vectorization, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(382,2)
+<Multiversioned v2>
+   remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+LOOP END
+
+LOOP BEGIN at HJM.cpp(382,2)
+<Remainder, Multiversioned v2>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(383,2)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(383,2)
+   remark #15388: vectorization support: reference pdexpRes has aligned access   [ HJM.cpp(383,55) ]
+   remark #15388: vectorization support: reference pdexpRes has aligned access   [ HJM.cpp(383,41) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.143
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 109 
+   remark #15477: vector loop cost: 38.500 
+   remark #15478: estimated potential speedup: 2.790 
+   remark #15482: vectorized math library calls: 1 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at HJM.cpp(383,2)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(387,2)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(387,2)
+   remark #15388: vectorization support: reference pdDiscountFactors has aligned access   [ HJM.cpp(388,4) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.833
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector loop cost summary ---
+   remark #15476: scalar loop cost: 5 
+   remark #15477: vector loop cost: 1.500 
+   remark #15478: estimated potential speedup: 3.160 
+   remark #15488: --- end vector loop cost summary ---
+LOOP END
+
+LOOP BEGIN at HJM.cpp(387,2)
+<Remainder loop for vectorization>
+   remark #15388: vectorization support: reference pdDiscountFactors has aligned access   [ HJM.cpp(388,4) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.000
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at HJM.cpp(387,2)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at HJM.cpp(390,2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at HJM.cpp(392,4)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at HJM.cpp(394,6)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between pdDiscountFactors line 395 and pdDiscountFactors line 395
+         remark #15346: vector dependence: assumed ANTI dependence between pdDiscountFactors line 395 and pdDiscountFactors line 395
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
