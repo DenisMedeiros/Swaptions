@@ -364,7 +364,7 @@ int Discount_Factors_opt(FTYPE *pdDiscountFactors,
 // ***********************************************************************
 // ***********************************************************************
 // ***********************************************************************
-int Discount_Factors_Blocking(FTYPE * __restrict pdDiscountFactors, 
+int Discount_Factors_Blocking(FTYPE * pdDiscountFactors, 
 			      int iN, 
 			      FTYPE dYears, 
 			      FTYPE *pdRatePath,
@@ -384,18 +384,19 @@ int Discount_Factors_Blocking(FTYPE * __restrict pdDiscountFactors,
 	
 
 	//initializing the discount factor vector
-	for (i=0; i<(iN)*BLOCKSIZE; ++i)
-	  pdDiscountFactors[i] = 1.0;
+
+
+	//for (i=0; i<(iN)*BLOCKSIZE; ++i)
+	//  pdDiscountFactors[i] = 1.0;
 
 	for (i=1; i<=iN-1; ++i){
-	  //printf("\nVisiting timestep %d : ",i);
 	  for (b=0; b<BLOCKSIZE; b++){
-	    //printf("\n");
+        FTYPE temp = 1;
 	    for (j=0; j<=i-1; ++j){
-	      pdDiscountFactors[i*BLOCKSIZE + b] *= pdexpRes[j*BLOCKSIZE + b];
-	      //printf("(%f) ",pdexpRes[j*BLOCKSIZE + b]);
+	      temp *= pdexpRes[j*BLOCKSIZE + b];
 	    }
-	  } // end Block loop
+        pdDiscountFactors[i*BLOCKSIZE + b] = temp;
+	  } 
 	} 
 
 	free_dvector(pdexpRes, 0,(iN-1)*BLOCKSIZE-1);

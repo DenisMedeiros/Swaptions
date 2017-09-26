@@ -10,8 +10,9 @@ INCLUDE =
 #CXXFLAGS := $(CXXFLAGS) -pg
 
 CXX = icpc
+#CXXFLAGS = -O0
 CXXFLAGS = -O2 -qopt-report=5 -qopt-report-phase=vec
-#CXXFLAGS = -O2 -no-prec-div -O2 -D NOFUNCCALL -qopt-report=1 -qopt-report-phase=vec -prof-gen -prof-dir=./
+#CXXFLAGS = -O2 -no-prec-div -D NOFUNCCALL -qopt-report=1 -qopt-report-phase=vec -prof-gen -prof-dir=./
 
 # Para habilitar a versão com threads.
 # version = pthreads
