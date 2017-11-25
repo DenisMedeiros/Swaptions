@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#SBATCH --time=0-0:30
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=32
+#SBATCH --partition test
+#SBATCH --exclusive
+#SBATCH --job-name=swaptions
+
+# Comparação de qual schedule é melhor.
+
+inicio=`echo $(($(date +%s%N)/1000000))`
+./swaptions -ns 8192 -sm 8192 -nt 32
+fim=`echo $(($(date +%s%N)/1000000))`
+tempo=$(($fim - $inicio))
+echo "Tempo de execução: $tempo ms"
+
